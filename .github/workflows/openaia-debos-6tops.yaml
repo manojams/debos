@@ -30,7 +30,7 @@ jobs:
           -w /home/build/shared \
           -e DEBIAN_FRONTEND=noninteractive \
           -e TERM=xterm-256color \
-          --platform linux/arm64
+          --platform linux/arm64 \
           ghcr.io/openaia/easy-build/build-debos:bookworm-v0.1 \
           sudo debos --memory=4Gb -t imgname:6tops recipe.yaml
 
