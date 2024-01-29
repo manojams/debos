@@ -23,6 +23,8 @@ jobs:
 
     - name: Build OpenAIA Debos
       run: |
+        sudo apt install qemu-user-static
+        sudo apt install binfmt-support
         docker run --rm --tty \
           --privileged \
           --net host \
