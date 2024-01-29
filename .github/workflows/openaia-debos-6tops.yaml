@@ -29,7 +29,7 @@ jobs:
           --privileged \
           --net host \
           -v ${{ github.workspace }}:/home/build/shared \
-          -v /dev:/dev \  # Add this line to mount /dev
+          -v /dev:/dev \ 
           -w /home/build/shared \
           -e DEBIAN_FRONTEND=noninteractive \
           -e TERM=xterm-256color \
