@@ -27,7 +27,10 @@ jobs:
           --privileged \
           --net host \
           -v ${{ github.workspace }}:/home/build/shared \
-          -w /home/build/shared ghcr.io/openaia/easy-build/build-debos:bookworm-v0.1 \
+          -w /home/build/shared \
+          -e DEBIAN_FRONTEND=noninteractive \
+          -e TERM=xterm-256color \
+          ghcr.io/openaia/easy-build/build-debos:bookworm-v0.1 \
           sudo debos --memory=4Gb -t imgname:6tops recipe.yaml
 
     - name: Upload output artifacts
